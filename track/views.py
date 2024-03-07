@@ -6,4 +6,4 @@ todays_date = datetime.now
 
 
 def home(request):
-    return render(request, "home.html", {'date': todays_date})
+    return render(request, "track/home.html", {'date': todays_date})
