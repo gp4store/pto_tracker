@@ -2,6 +2,7 @@
     <p>
         <h1>Dont F@#! with my PTO</h1>
     </p>
+</center>
 
 
 
@@ -13,9 +14,17 @@
 
 
 <center>
-    <button type="button">Home</button>    
-    <button type="button">Send new request</button>
-    <button type="button">My time OFF diary</button>
+    <button type="button">
+        <a href="{% url 'home' %}">Home</a>
+    </button>
+       
+    <button type="button">
+        <a href="{% url 'new_req' %}">Send new request</a>
+    </button>
+    
+    <button type="button">
+        <a href="{% url 'req' %}">My time OFF diary</a>
+    </button>
 </center>
 
-<center><br><h10>Created by MS186</h10></center></br></center>
+<center><br><h10>Created by Getore</h10></center></br></center>

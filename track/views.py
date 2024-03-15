@@ -12,7 +12,11 @@ def home(request):
 def req(request):
 
     request_list = pto_request.objects.all()
-    return render(request, "track/request_list.html", {'request_list' : request_list} )
+    return render(request, "track/request_list.html", {'request_list' : request_list})
+
+def new_req(request):
+
+    return render(request, "track/new_req.html", {'date': todays_date})
 
 
     

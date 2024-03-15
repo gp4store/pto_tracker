@@ -2,19 +2,26 @@
 
 {% block content %}
 
+
     <p>
         <h1>Your time off requests:</h1>
     </p>
+
     <ul>
-    <p>{% for item in request_list %}
-            <li>{{ item }}</li>
-        {% endfor %}
-    </p>
+    {% for request in request_list %}
+
+        <strong>{{ request }}</strong>
+        <li>Dates requested: {{ request.date_requested }}</li>
+        <li>Hours used: {{ request.hours_used }}</li>
+        <li>Request was sent to: {{ request.send_to }}</li>
+        <li>Notes: {{ request.notes }}</li>
+
+        <br/>
+    {% endfor %}
+   
     </ul>
-    <p>
-        <h1>{{ date }}</h1>
-    </p>
-</center>
+
+
 
 {% endblock %}
     
