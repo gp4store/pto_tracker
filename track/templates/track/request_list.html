@@ -1,0 +1,20 @@
+{% extends 'track/base.html' %}
+
+{% block content %}
+
+    <p>
+        <h1>Your time off requests:</h1>
+    </p>
+    <ul>
+    <p>{% for item in request_list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </p>
+    </ul>
+    <p>
+        <h1>{{ date }}</h1>
+    </p>
+</center>
+
+{% endblock %}
+    
