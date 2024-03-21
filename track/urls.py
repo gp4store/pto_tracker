@@ -9,5 +9,4 @@ urlpatterns = [
     path('req', views.req, name = 'req'),
     path('new_req', views.new_req, name = 'new_req'),
     
-
 ]

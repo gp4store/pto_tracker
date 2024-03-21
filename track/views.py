@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from datetime import datetime
 from .models import pto_request
-
+from .forms import pto_requestForm
+from django.http import HttpResponseRedirect
 
 todays_date = datetime.now
 
@@ -16,7 +17,30 @@ def req(request):
 
 def new_req(request):
 
-    return render(request, "track/new_req.html", {'date': todays_date})
+    if request.method != 'POST':
+        form = pto_requestForm()
+    else:
+        form = pto_requestForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            # return redirect('track:new_req')
+            return HttpResponseRedirect('/req')
+
+        
+    context = {'form': form}
+    return render(request, "track/new_req.html", context)
+
+    # request_sent = False
+    # if request.method == 'POST':
+    #     form = pto_requestForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return HttpResponseRedirect('/new_req?request_sent=True')
+    #     else:
+    #         form = pto_requestForm
+    #         if 'request_sent' in request.GET:
+    #             request_sent = True
+    # return render(request, "track/new_req.html", {'form': form, 'request_sent': request_sent })
 
 
     

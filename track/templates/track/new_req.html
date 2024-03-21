@@ -3,9 +3,25 @@
 {% block content %}
 
 <center>
-<strong><h1>
-    COMING SOON :D
-</h1></strong>
+<strong>
+    <h2>Create your new time off request</h2>
+    <br/><br/>
+    {% if request_sent %}
+
+    Your request has been sent !!
+
+    {% else %}
+
+    <form action="" method=POST>
+        {% csrf_token %}
+
+        {{ form.as_p }}
+    <input type = "submit" value = "SUBMIT" class = "btn btn-success">
+    </form>
+    
+    {% endif %}
+
+</strong>
 </center>
 
 
