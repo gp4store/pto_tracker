@@ -14,6 +14,7 @@ class pto_request(models.Model):
     # Connecting two datasets together
     pto_type = models.CharField('What are you using: ', max_length = 3)
     # User can select VAC, FLT, HFL, CTO
+    was_sent = models.CharField('This request was sent on: ', max_length = 8, null = True)
     date_requested = models.CharField('For what dates (MM/DD/YY): ', max_length = 120)
     # User needs to specified the dates hes planning to take off
     hours_used = models.CharField('Total hours requested: ', max_length = 2)

@@ -1,0 +1,19 @@
+{% extends 'track/base.html' %}
+
+{% block content %}
+
+
+    <p>
+        <h3>{{ submit_req }}</h3>
+        
+
+        <li>Dates requested: {{ submit_req.date_requested }}</li>
+        <li>Request sent on: {{ submit_req.was_sent }}</li>
+        <li>Hours used: {{ submit_req.hours_used }}</li>
+        <li>Request was sent to: {{ submit_req.send_to }}</li>
+        <li>Notes: {{ submit_req.notes }}</li>
+    </p>
+
+
+{% endblock %}
+    

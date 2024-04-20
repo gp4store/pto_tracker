@@ -42,5 +42,19 @@ def new_req(request):
     #             request_sent = True
     # return render(request, "track/new_req.html", {'form': form, 'request_sent': request_sent })
 
+def list_request(request):
+
+    request_list = pto_request.objects.all()
+    return render(request, "track/list_request.html", {'request_list': request_list})
+
+def show_request(request, request_id):
+
+    submit_req = pto_request.objects.get(pk = request_id)
+    return render(request, "track/show_request.html", {'submit_req': submit_req})
+
+
+
+
+
 
     

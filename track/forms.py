@@ -7,10 +7,11 @@ class pto_requestForm(ModelForm):
     class Meta:
 
         model = pto_request
-        fields = ('pto_type', 'date_requested', 'hours_used', 'send_to')
+        fields = ('pto_type', 'was_sent', 'date_requested', 'hours_used', 'send_to')
         labels = {
             
             'pto_type': '',
+            'was_sent': '',
             'date_requested': '', 
             'hours_used': '',
             'send_to': '',
@@ -18,7 +19,8 @@ class pto_requestForm(ModelForm):
         widgets = {
             
             'pto_type': forms.TextInput(attrs={'class':'form-control', 'placeholder':'What are you using?'}),
-            'date_requested': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Dates MM/DD/YY, '}),
+            'was_sent': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Request sent on MM/DD/YY', }),
+            'date_requested': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Dates MM/DD/YY '}),
             'hours_used': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Hours to use'}),
             'send_to': forms.EmailInput(attrs={'class':'form-control', 'placeholder':'send to?'}),
         }
