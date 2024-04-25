@@ -4,13 +4,17 @@
 
 
     
-        <h1>Request</h1>
+        <h1>Requests made</h1>
         <table class = "table table-striped table-hover table-bordered">
 
             {% for item in request_list %}
             <tr>
                 <td>
-                    Request using <a href="{% url 'show_request' item.id %}">{{ item }}</a> - was sent on {{item.was_sent}}<br/>
+                    <a href="{% url 'show_request' item.id %}">{{ item }}</a>
+                     - sent on {{item.was_sent}}</a></br>
+                    <td align="right">
+                        <a href="{% url 'update_request' item.id %}">Modify entry</a>
+                    </td>
                 </td>
             </tr>
             {% endfor %}

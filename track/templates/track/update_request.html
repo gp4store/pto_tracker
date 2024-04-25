@@ -1,0 +1,20 @@
+{% extends 'track/base.html' %}
+
+{% block content %}
+
+<center>
+    <p>
+        <h2>Update Venue</h2>
+        <form action="" method = POST>
+            {% csrf_token %}
+            {{ form.as_p }}
+        </br>
+        <input type = 'submit' value = 'Update'
+        class="btn btn-secondary"
+        
+        
+    </p>
+</center>
+
+{% endblock %}
+    

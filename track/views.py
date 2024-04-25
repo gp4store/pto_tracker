@@ -52,6 +52,15 @@ def show_request(request, request_id):
     submit_req = pto_request.objects.get(pk = request_id)
     return render(request, "track/show_request.html", {'submit_req': submit_req})
 
+def update_request(request, request_id):
+
+    up_request = pto_request.objects.get(pk = request_id)
+    form = pto_requestForm(request.POST or None, instance = up_request)
+    if form.is_valid():
+        form.save()
+        return redirect('list_request')
+    return render(request, 'track/update_request.html', {'up_request': up_request, 'form': form})
+
 
 
 
