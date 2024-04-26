@@ -61,6 +61,12 @@ def update_request(request, request_id):
         return redirect('list_request')
     return render(request, 'track/update_request.html', {'up_request': up_request, 'form': form})
 
+def delete_request(request, request_id):
+
+    del_request = pto_request.objects.get(pk = request_id)
+    del_request.delete()
+    return redirect('list_request')
+
 
 
 

@@ -11,5 +11,6 @@ urlpatterns = [
     path('list_request', views.list_request, name = 'list_request'),
     path('show_request/<request_id>', views.show_request, name = 'show_request'),
     path('update_request/<request_id>', views.update_request, name = 'update_request'),
+    path('delete_request/<request_id>', views.delete_request, name = 'delete_request'),
     
 ]

@@ -18,7 +18,7 @@ class pto_requestForm(ModelForm):
         }
         widgets = {
             
-            'pto_type': forms.TextInput(attrs={'class':'form-control', 'placeholder':'What are you using?'}),
+            'pto_type': forms.TextInput(attrs={'class':'form-control', 'placeholder':'CTO, HFL, VAC?'}),
             'was_sent': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Request sent on MM/DD/YY', }),
             'date_requested': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Dates MM/DD/YY '}),
             'hours_used': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Hours to use'}),
