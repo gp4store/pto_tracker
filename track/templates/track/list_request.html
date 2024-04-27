@@ -10,14 +10,14 @@
             {% for item in request_list %}
             <tr>
                 <td>
-                    <a href="{% url 'show_request' item.id %}">{{ item }}</a>
-                     - sent on {{item.was_sent}}</a></br>
+                    Request using <!--<a href="{% url 'show_request' item.id %}">--> {{ item }}</a>
+                     - was sent on {{item.was_sent}}</a></br>
                     <td align="right">
-                        <a href="{% url 'update_request' item.id %}">
+                        <a href="{% url 'update_request' item.id %}" class="btn btn-secondary">
                         Modify entry</a>
                     </td>
                     <td align="right">
-                    <a href="{% url 'delete_request' item.id %}">
+                        <a href="{% url 'delete_request' item.id %}" class="btn btn-danger">
                         Delete entry</a></td>
                     </td>
                 </td>
