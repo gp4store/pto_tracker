@@ -1,4 +1,5 @@
 Time off tracker created to keep a good track of what type of time off is used.
+Based on Python and DJango web framework
 
 Concepts:
   
